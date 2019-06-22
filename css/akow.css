@@ -1,0 +1,162 @@
+body{
+    font-family: '微软雅黑' !important;
+    
+}
+
+.jioween{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+.xuanran{
+    width: 100%;
+    min-height:40% ;
+    margin-top: 50px;
+}
+.dsfewerw{
+ font-size: 0px;
+}
+.m-cell{
+    margin: 0px;
+}
+.ffgf{
+    width: 50% !important;
+    display: inline-block !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+    
+}
+.sdfwef{
+    padding: 0px !important;
+    width: 100% !important;
+    position: fixed !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    z-index: 88888;
+
+}
+.dfwdsf{
+    width: 100px;
+    height: 100px;
+    /* border: 1px solid black; */
+}
+.zhut{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: inline-block;
+    padding: 1px;
+    background: rgb(209, 209, 209);
+    background-clip: content-box;
+    font-size: 0.5rem;
+    text-align: center;
+    line-height: 200px;
+    color: white;
+    font-weight: 400;
+    margin: 0px;
+}
+.futu{
+    width: 50%;
+    height: 50%;
+    /* border: 1px solid black; */
+    display: inline-block;
+    vertical-align: top;
+    padding:2px;
+    background: rgb(226, 226, 226);
+    background-clip: content-box;
+    font-size: 0.5rem;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    margin: 0px;
+}
+.tuk{
+    width: 100%;
+    height: 206px;
+    /* border: 1px solid blue; */
+    font-size: 0px;
+}
+.jiweesads{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0px;
+
+}
+.disno{
+    display: none;
+}
+.girjogior{
+    width: 100%;
+    height: 100%;
+}
+.xiangqingy{
+    width: 100%;
+    min-height: 600px;
+    border: 2px dashed rgb(226, 226, 226);
+    text-align: center;
+    color:  rgb(226, 226, 226);
+    font-size: 3rem;
+    line-height: 8rem;
+}
+.fdsfsdfe{
+    z-index: 8888;
+    
+}
+.joiiasa{
+    width: 100%;
+    display: inline-block;
+    height: auto;
+    border: 1px solid black;
+    font-size: .35rem;
+}
+.imgkkk{
+    width: 100%;
+}
+.imgkkk img{
+    width: 100%;
+}
+.dsfsfwefr{
+    font-size: 0px;
+}
+.pppae{
+    width: 50%;
+    padding: 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+.jiwoeosa{
+    color: red;
+    padding: 0px;
+    padding-left: .25rem;
+    margin: 2px;
+}
+.efwef{
+float: right;
+color: black;
+margin-right: .25rem;
+}
+.flimg{
+    width: 100%;
+    height: 100%;
+    border: 2px dotted rgb(231, 231, 231);
+    font-size: .35rem;
+    text-align: center;
+    color: rgb(78, 78, 78)
+}
+#flimg{
+    display: none;
+}
+.joijwiej{
+    width: 200px;
+    height: 30px;
+ 
+}
+.dsfwggas{
+    display: none;
+}
+.confirm-bd .cell-item{
+    height: 40px;
+}

@@ -1,0 +1,258 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/akow.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+        <header class="m-navbar navbar-fixed">
+                <a href="../page/adbpeo.html" class="navbar-item">
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">分类列表</span>
+                </div>
+               
+            </header>
+
+
+            <div class="xuanran">
+                    <!-- <div class="m-cell">
+                            <div class="cell-item">
+                                <div class="cell-left">左边内容一</div>
+                                <div class="cell-right cell-arrow"></div>
+                            </div>
+                        </div> -->
+            </div>
+
+            
+            <input type="text" id="renames" style="display:none">
+         
+            <div class="m-button">
+                    <button type="button" class="btn-block btn-primary jioween" id="J_ShowActionSheet">新建分类</button>
+                </div>
+            <div class="m-actionsheet" id="J_ActionSheet">
+                    <div class="cell-item actionsheet-item">
+                            <div class="cell-left">分类名：</div>
+                            <div class="cell-right "><input type="text"  class="cell-input" placeholder="请输入分类名" autocomplete="off" id="flname" /></div>
+                        </div>
+                        <div class="cell-item actionsheet-item">
+                                <div class="cell-left">分类图片：</div>
+                                <div class="cell-right "> <label for="flimg" class="flimg"> 请选择一张图片</label> <input type="file" id='flimg' accept="image/*" capture='camera' onchange="choose(this)"></div>
+                            </div>
+                    <a href="javascript:;" class="actionsheet-action" id="J_Cancel">确定</a>
+                </div>
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+    <script>
+// xr
+        $.ajax({
+            type: "post",
+            url: "http://localhost/phpbox/onlinepro/php/execute/fenlei.php",
+            data: {type:0},
+        
+            success: function (response) {
+                console.log(response);
+                var jfw = JSON.parse(response)
+                console.log(jfw.data);
+                jiwoe(jfw.data)
+                var jjiiw =  document.getElementsByClassName('longtouch');
+                console.log(jjiiw);
+                for (let i = 0; i < jjiiw.length; i++) {
+    
+          var self = this;
+        var longClick =0;
+$(".longtouch").eq(i).on({
+    touchstart: function(e){
+        longClick=0;//设置初始为0
+        timeOutEvent = setTimeout(function(){
+            tanchu($(".longtouch").eq(i))
+            //此处为长按事件-----在此显示遮罩层及删除按钮
+            longClick=1;//假如长按，则设置为1
+        },500);
+    },
+    touchmove: function(){
+        clearTimeout(timeOutEvent);
+        timeOutEvent = 0;
+        e.preventDefault();
+    },
+    touchend: function(e){
+        clearTimeout(timeOutEvent);
+        if(timeOutEvent!=0 && longClick==0){//点击
+            //此处为点击事件----在此处添加跳转详情页
+        }
+        return false;
+    }
+});
+         
+            
+         }
+            }
+        });
+
+// 渲染
+
+function jiwoe(array) {
+    for (let i = 0; i < array.length; i++) {
+            var jiwo = $('<div>') 
+            jiwo.attr("class","m-cell longtouch")
+            // jiwo.attr("class","longtouch")
+            jiwo.html(
+                ` 
+                            <div class="cell-item">
+                                <div class="cell-left">${array[i].name}</div>
+                                <div class="cell-right cell-arrow dsfewerw">${array[i].id}</div>
+                            </div>
+                            
+                        
+                `
+            )
+        $('.xuanran').append(jiwo)
+    }
+
+  }
+
+
+var $as = $('#J_ActionSheet');
+
+$('#J_ShowActionSheet').on('click', function () {
+    $as.actionSheet('open');
+});
+
+$('#J_Cancel').on('click', function () {
+    $as.actionSheet('close');
+});
+
+/* 自定义事件 */
+$as.on('open.ydui.actionsheet', function () {
+    console.log('打开了');
+}).on('close.ydui.actionsheet', function () {
+    console.log($('#flname').val());
+    var jidoipgp = document.getElementById('flimg').files[0]
+
+    var fromdata = new FormData();
+    fromdata.append('type',1)
+    fromdata.append('flname',$('#flname').val())
+    fromdata.append('filimg',jidoipgp)
+    
+    $.ajax({
+        type: "POST",
+        url: "http://localhost/phpbox/onlinepro/php/execute/fenlei.php",
+        data: fromdata,
+        processData:false,
+            contentType:false,
+        // dataType: "dataType",
+        success: function (response) {
+            console.log(response);
+            location.reload()
+        }
+    });
+});
+
+
+
+     
+
+
+
+  
+        function tanchu(eq) {
+            // console.log(eq.lastElementChild.lastElementChild.innerText);
+            console.log(eq);
+            
+            
+                YDUI.dialog.confirm('修改', '<div class="cell-item"><div class="cell-left">重命名：</div><div class="cell-right"><input type="text" id="rename" onchange = jiiew(this) class="cell-input"placeholder=""autocomplete="off"/></div></div>', [
+                {
+                    txt: '取消',
+                    color: false, /* false:黑色  true:绿色 或 使用颜色值 */
+                    callback: function () {
+
+
+                       
+                    }
+                },
+                {
+                    txt: '删除',
+                    // stay: true, /* 是否保留提示框 */
+                    color: 'red', /* 使用颜色值 */
+                    callback: function () {
+                        console.log();
+                        
+                        $.ajax({
+                            type: "post",
+                            url: "http://localhost/phpbox/onlinepro/php/execute/fenlei.php",
+                            data: {type:2,id:eq[0].lastElementChild.lastElementChild.innerText},
+                            dataType: "dataType",
+                            success: function (response) {
+                              
+                            }
+                        });
+                        YDUI.dialog.toast('删除成功', 'none', 1000);
+                        setTimeout(() => {
+                            location.reload()
+                        }, 1000);
+                    }
+                },
+                {
+                    txt: '确定',
+                    color: true,
+                    callback: function () {
+                        console.log($('#renames').val());
+                        
+                        $.ajax({
+                            type: "post",
+                            url: "http://localhost/phpbox/onlinepro/php/execute/fenlei.php",
+                            data: {type:3,id:eq[0].lastElementChild.lastElementChild.innerText,text:$('#renames').val()},
+                            // dataType: "dataType",
+                            success: function (response) {
+                                console.log(response);
+                                
+                            }
+                        });
+                        YDUI.dialog.toast('修改成功', 'none', 1000);
+                        setTimeout(() => {
+                            location.reload()
+                        }, 1000);
+                    }
+                }
+            ]);
+          
+              
+            
+        }
+        function jiiew(eq) { 
+            $('#renames').val(eq.value)  ;
+        }
+
+
+
+ 
+     
+      
+   
+
+        
+    </script>
+</html>
+
+
+

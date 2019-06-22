@@ -1,0 +1,27 @@
+body{
+    background: white;
+    font-family: '微软雅黑' !important
+}
+.yibiao{
+    width: 100%;
+    height: 30%;
+    background: #0066FF;
+}
+.toum{
+    background: transparent;
+  
+}
+.nok:after{
+    border: none;
+}
+.white{
+    color:  white !important;
+    font-family: '微软雅黑'
+}
+.white:before{
+    color:  white !important;
+    font-family: '微软雅黑'
+}
+.fdsfwe{
+    padding: 0px !important;
+}

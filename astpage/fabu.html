@@ -1,0 +1,538 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/akow.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+        <header class="m-navbar fdsfsdfe">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">发布商品</span>
+                </div>
+              
+            </header>
+    <div class="g-flexview">
+           
+                <div class="m-cell">
+                    <div class="cell-item">
+                        <div class="cell-left">标题：</div>
+                        <div class="cell-right"><input type="text" class="cell-input chuanzhi1" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">货号：</div>
+                        <div class="cell-right"><input type="text" class="cell-input chuanzhi2" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">库存：</div>
+                        <div class="cell-right"><input type="text" class="cell-input chuanzhi3" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">定价：</div>
+                        <div class="cell-right"><input type="text" class="cell-input chuanzhi4" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">折扣：</div>
+                        <div class="cell-right"><input type="text" class="cell-input chuanzhi5" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">商品分类：</div>
+                        <label class="cell-right cell-arrow">
+                            <select class="cell-select chuanzhi6">
+                                <option value="">请选择分类</option>
+                                <!-- <option value="1">男</option>
+                                <option value="2">女</option>
+                                <option value="3">未知</option> -->
+                            </select>
+                        </label>
+                    </div>
+
+
+
+                  
+                    <div class="m-cell">
+                            <div class="cell-item">
+                                <div class="cell-left">请选择尺码</div>
+                               <label for="dsoijfoiwje" class="joijwiej cell-right">点击添加尺码</label> <input type="text" id="dsoijfoiwje"  class="cell-input dsfwggas" placeholder="点击添加尺码" autocomplete="off" />
+                            </div>
+                            <div class="cell-item">
+                                <div class="cell-left">已选择的尺码</div>
+                                <div class="cell-right"><input type="text"  class="cell-input dsfsgfdjt" autocomplete="off" /></div>
+                            </div>
+                            <div class="cell-item">
+                                    <div class="cell-left">请输入颜色分类：</div>
+                                    <div class="cell-right"><input type="text" class="cell-input dsfsdger"  autocomplete="off" /></div>
+                                </div>
+                        </div>
+                    
+                    
+                            
+
+
+
+                  
+
+                        
+                    <div class="tuk">
+                        <label for="image1" class="zhut">添加主图</label>
+                        <div class="jiweesads">
+                            <label for="image2" class="futu">+</label>
+                            <label for="image3" class="futu">+</label>
+                            <label for="image4" class="futu">+</label>
+                            <label for="image5" class="futu">+</label>
+                        </div> 
+                       
+                    </div>
+                   
+                  <div class="disno">
+                        <input type="file" id='image1' accept="image/*" capture='camera' onchange="choose(this)">
+                        <input type="file" id='image2' accept="image/*" capture='camera' onchange="choose(this)">
+                        <input type="file" id='image3' accept="image/*" capture='camera' onchange="choose(this)">
+                        <input type="file" id='image4' accept="image/*" capture='camera' onchange="choose(this)">
+                        <input type="file" id='image5' accept="image/*" capture='camera' onchange="choose(this)">
+                        <!-- xx -->
+                        <input type="file" id='xianga1' accept="image/*" capture='camera' onchange="choose(this)">
+                  </div>
+                   
+                  
+
+<header class="m-navbar">
+    <div class="navbar-center">
+        <span class="navbar-title">商品详情</span>
+    </div>
+</header>
+<div class="xianga">
+        <label for="xianga1" class="xiangqingy"> +</label>
+    </div>
+                    
+            
+                    </div>
+                    <div class="cell-item sdfwef">
+                            <button type="button" class="btn-block btn-primary ffgf" id="J_ShowActionSheet1">发布商品</button>
+                            <button type="button" class="btn-block btn-warning ffgf" id="J_ShowActionSheet2">发布到仓库</button>
+                    </div>
+    </div>
+   
+        <!-- <div class="m-button">
+            <button type="button" class="btn-block btn-primary ffgf" id="J_ShowActionSheet">发布商品</button>
+          
+        </div> -->
+        
+
+
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+    <script>
+        var jiiiw = []
+    
+        function jsdiw(eq){
+            if (eq.checked) {
+                jiiiw.push(eq.value)
+            }else{
+
+                for(let i=0;i<jiiiw.length;i++){
+                 if(jiiiw[i]==eq.value){
+                    jiiiw.splice(i,1);
+                 break;
+                     }
+                    }
+             
+            }
+           
+            // console.log(eq.value);
+            $('.dsfwggas').val(jiiiw)
+            console.log(window.jiiiw);
+            
+     
+          
+        }
+  var srre ={
+            type:3
+    }
+    $.ajax({
+            type: "post",
+            url: "http://localhost/phpbox/onlinepro/php/execute/fabu.php",
+            data: srre,
+        //     dataType: "dataType",
+            success: function (response) {
+                   
+                    var oiiw = JSON.parse(response)
+                    console.log(oiiw.data);
+                    xuanranfenlei(oiiw.data)
+                    
+            }
+    });
+
+
+        var jjowfokpow = location.search
+       ;
+      var jijw =  jjowfokpow.split("=")
+      console.log(jijw[1])
+        if (jijw != '') {
+
+            $('.sdfwef').html(
+            `
+            <button type="button" class="btn-block btn-primary ffgf" id="J_ShowActionSheet3">修改</button>
+                            <button type="button" class="btn-block btn-warning ffgf" id="J_ShowActionSheet4">下架</button>
+            `
+            )
+          $.ajax({
+              type: "post",
+              url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+              data: {idsjf:jijw[1]},
+            //   dataType: "dataType",
+              success: function (response) {
+                  console.log(response);
+                  var llji= JSON.parse(response)
+                    console.log(llji.data[0]);
+                    
+                  xiugaixr(llji.data[0])
+                  
+              }
+          });
+            
+        }
+      function xiugaixr(obj){
+        $('.chuanzhi1').val(obj.title)
+        $('.chuanzhi2').val(obj.huohao)
+        $('.chuanzhi3').val(obj.num)
+        $('.chuanzhi4').val(obj.price)
+        $('.chuanzhi5').val(obj.zhekou)
+        $('.chuanzhi6 ').val(obj.fenlei)
+        
+    var img = document.createElement('img');
+    img.className = "girjogior"
+    img.src = obj.zhuurl
+        $('.zhut').text('')
+        $('.zhut').append(img)
+
+        var img2 = document.createElement('img');
+    img2.className = "girjogior"
+    img2.src = obj.img2url
+        $('.futu').eq(0).text('')
+        $('.futu').eq(0).append(img2)
+
+        var img3 = document.createElement('img');
+    img3.className = "girjogior"
+    img3.src = obj.img3url
+        $('.futu').eq(1).text('')
+        $('.futu').eq(1).append(img3)
+
+        var img4 = document.createElement('img');
+    img4.className = "girjogior"
+    img4.src = obj.img4url
+        $('.futu').eq(2).text('')
+        $('.futu').eq(2).append(img4)
+
+        var img5 = document.createElement('img');
+    img5.className = "girjogior"
+    img5.src = obj.img5url
+        $('.futu').eq(3).text('')
+        $('.futu').eq(3).append(img5)
+
+        var img6 = document.createElement('img');
+    img6.className = "girjogior"
+    img6.src = obj.xiang
+      $('.xiangqingy').text('') 
+      $('.xiangqingy').append(img6)
+        // $(".chuanzhi6 option[value='"+obj.fenlei+"'] ").attr("selected",true)
+
+      }
+// 尺码
+      $('.joijwiej').on('click', function () {
+        YDUI.dialog.confirm('请选择尺码', '<div class="m-cell"><label class="cell-item"><span class="cell-left">S</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox" value="S"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">L</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox" value="L"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox" value="XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">2XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox" value="2XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">3XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox" value="3XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">4XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox"value="4XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">5XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox"value="5XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">6XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox"value="6XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">8XL</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox"value="8XL"/><i class="cell-checkbox-icon"></i></label></label><label class="cell-item"><span class="cell-left">均码</span><label class="cell-right"><input type="checkbox" onchange=jsdiw(this) name="checkbox"value="均码"/><i class="cell-checkbox-icon"></i></label></label></div>', function () {
+
+         $('.dsfsgfdjt').val(jiiiw)
+            
+            });
+        });
+      
+// 发布商品
+
+$('#J_ShowActionSheet1').click(function () {
+    
+    var str = {
+        type: 21,
+        zi1:  $('.chuanzhi1').val(),
+        zi2:  $('.chuanzhi2').val(),
+        zi3:  $('.chuanzhi3').val(),
+        zi4:  $('.chuanzhi4').val(),
+        zi5:  $('.chuanzhi5').val(),
+        zi6:  $('.chuanzhi6').find("option:selected").val(),
+        zi7:  1
+       
+    }
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+        data: str,
+        // dataType: "dataType",
+        success: function (response) {
+                console.log(response);
+                var obj = JSON.parse(response);
+                    insert_id = obj.data['insertId'];
+                    console.log(insert_id);
+                    
+                    ajaxtwo()
+                    YDUI.dialog.toast('发布成功', 'none', 1000);
+                    setTimeout(() => {
+                    location.reload();
+                }, 1000);
+        }
+    });
+   
+    
+})
+$('#J_ShowActionSheet2').click(function () {
+  
+  var str = {
+      type: 22,
+      zi1:  $('.chuanzhi1').val(),
+      zi2:  $('.chuanzhi2').val(),
+      zi3:  $('.chuanzhi3').val(),
+      zi4:  $('.chuanzhi4').val(),
+      zi5:  $('.chuanzhi5').val(),
+      zi6:  $('.chuanzhi6').find("option:selected").val(),
+      zi7:  0
+     
+  }
+  $.ajax({
+      type: "post",
+      url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+      data: str,
+      // dataType: "dataType",
+      success: function (response) {
+              console.log(response);
+              var obj = JSON.parse(response);
+                  insert_id = obj.data['insertId'];
+                
+                  
+                  ajaxtwos()
+                YDUI.dialog.toast('发布成功', 'none', 1000);
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+      }
+  });
+ 
+  
+})
+
+var insert_id;
+    function ajaxtwo() {
+        var zhut = document.getElementById('image1');
+        var pic2 = document.getElementById('image2');
+        var pic3 = document.getElementById('image3');
+        var pic4 = document.getElementById('image4');
+        var pic5 = document.getElementById('image5');
+        var xiang = document.getElementById('xianga1');
+       
+        var formdata;
+          formdata = new FormData();
+          formdata.append("zhut",zhut.files[0]);
+          formdata.append("pic2",pic2.files[0]);
+          formdata.append("pic3",pic3.files[0]);
+          formdata.append("pic4",pic4.files[0]);
+          formdata.append("pic5",pic5.files[0]);
+          formdata.append("xiang",xiang.files[0]);
+          formdata.append("type",32); 
+          formdata.append("goosid", insert_id)
+         
+          
+        $.ajax({
+            type: "post",
+            processData:false,
+            contentType:false,
+            url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+            data: formdata,
+            // dataType: "dataType",
+            success: function (response) {
+
+                guige()
+                    console.log(response);
+                    
+            }
+        });
+        
+    }
+    function ajaxtwos() {
+        var zhut = document.getElementById('image1');
+        var pic2 = document.getElementById('image2');
+        var pic3 = document.getElementById('image3');
+        var pic4 = document.getElementById('image4');
+        var pic5 = document.getElementById('image5');
+        var xiang = document.getElementById('xianga1');
+
+        var formdata;
+          formdata = new FormData();
+          formdata.append("zhut",zhut.files[0]);
+          formdata.append("pic2",pic2.files[0]);
+          formdata.append("pic3",pic3.files[0]);
+          formdata.append("pic4",pic4.files[0]);
+          formdata.append("pic5",pic5.files[0]);
+          formdata.append("xiang",xiang.files[0]);
+          formdata.append("type",33);
+        $.ajax({
+            type: "post",
+            processData:false,
+            contentType:false,
+            url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+            data: formdata,
+            // dataType: "dataType",
+            success: function (response) {
+                    console.log(response);
+                    guige()
+            }
+        });
+        
+    }
+
+
+    function guige() {
+
+        var str ={
+            type :123,
+            chima : $('.dsfsgfdjt').val(),
+            color : $('.dsfsdger').val(),
+            goosid :insert_id
+
+        }
+        $.ajax({
+            type: "post",
+            url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+            data: str,
+            success: function (response) {
+                console.log(response);
+                
+            }
+        });
+    }
+
+$('#J_ShowActionSheet3').on("touchend",function () {
+    var str = {
+      type: 28,
+      goosid: jijw[1],
+      zi1:  $('.chuanzhi1').val(),
+      zi2:  $('.chuanzhi2').val(),
+      zi3:  $('.chuanzhi3').val(),
+      zi4:  $('.chuanzhi4').val(),
+      zi5:  $('.chuanzhi5').val(),
+      zi6:  $('.chuanzhi6').find("option:selected").val(),
+      zi7:  0
+     
+  }
+  $.ajax({
+      type: "post",
+      url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+      data: str,
+      // dataType: "dataType",
+      success: function (response) {
+              console.log(response);
+              var obj = JSON.parse(response);
+                  insert_id = obj.data['insertId'];
+                
+                  
+                //   updataimg();
+                YDUI.dialog.toast('修改成功', 'none', 1000);
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+      }
+  });
+ 
+})
+
+
+
+function updataimg() {
+    
+}
+$('#J_ShowActionSheet4').on("touchend",function () {
+
+
+
+    var str = {
+      type: 585,
+      goosid: jijw[1],
+
+  }
+
+    $.ajax({
+      type: "post",
+      url: "http://localhost/phpbox/onlinepro/php/execute/phpfabu.php",
+      data: str,
+      success: function (response) {
+              console.log(response);
+              var obj = JSON.parse(response);
+                  insert_id = obj.data['insertId'];
+                
+                  
+                //   updataimg();
+                YDUI.dialog.toast('下架成功', 'none', 1000);
+                setTimeout(() => {
+                    // location.reload();
+                }, 1000);
+      }
+  });
+})
+
+// -------------------------------------------------------------------
+    function xuanranfenlei(array) {
+        for (let i = 0; i < array.length; i++) {
+              var op = $('<option>')
+         op.attr("value",array[i].id)
+         op.text(array[i].name)
+      
+
+         $('select').append(op)
+                
+        }
+}
+function choose(file) {
+    formdata = new FormData();
+   var pic = file.files[0]
+   console.log(pic);
+  // FileRender类  渲染类
+  var reader = new FileReader();
+  reader.readAsDataURL(pic)
+   console.log(reader)
+   reader.onload = function(){
+  var fdsfe = document.querySelector('label[for="'+file.id+'"]')
+     
+       fdsfe.innerText = ""
+    var img = document.createElement('img');
+    img.className = "girjogior"
+    img.src = this.result
+    fdsfe.appendChild(img)
+     
+   }
+ 
+  }
+  
+ 
+    </script>
+</html>
+
+
+

@@ -1,0 +1,121 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>分类</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/dsfs.css">
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../font/iconfont3.css">
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+    <!-- 代码区 g-scrollview-->
+    <section class="">
+        <!-- 头部 -->
+        <header class="m-navbar navbar-fixed headernab">
+            <a href="#" class="navbar-item" onclick=back()>
+                <i class="back-ico"></i>
+            </a>
+            <div class="navbar-center dsfsdfwe">
+                分类菜单
+            </div>
+           
+            
+        </header>
+
+     
+        <div class="m-scrolltab marginee" id="J_ScrollTab">
+            <div class="scrolltab-nav">
+               
+            </div>
+            <div class="scrolltab-content">
+               
+            </div>
+        </div>
+  
+    <!-- 登录页 --></section>
+
+     
+      
+
+
+ 
+
+  
+
+
+<!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="../js/gong.js"></script>
+
+<script>
+   
+
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/fenlei.php",
+        data: {type:0},
+        
+        success: function (response) {
+            console.log(response);
+            var dfweo = JSON.parse(response)
+            console.log(dfweo.data);
+            
+            xrfl(dfweo.data)
+        }
+    });
+    function xrfl(array) {
+        for (let i = 0; i < array.length; i++) {
+            var jiowef = $('<a>')
+            jiowef.attr("href","javascript:;")
+            jiowef.attr("class","scrolltab-item")
+            jiowef.html(`
+           
+                    <div class="scrolltab-icon dfgsjrj"><!-- 你的图标 --> ${array[i].id}</div>
+                    <div class="scrolltab-title">${array[i].name}</div>
+             
+            `)
+
+
+            var jowei = $('<div>')
+                  
+                    jowei.attr("class","scrolltab-content-item")
+                jowei.html(`
+               
+                    <strong class="scrolltab-content-title">${array[i].name}</strong>
+                    <div class="jwijjig">
+           <a href="./fenleishop.html?dji=${array[i].id}">
+               <img src=${array[i].fenleiimg}>
+           </a>
+       </div>
+              
+                `)
+            $('.scrolltab-nav').append(jiowef)
+            $('.scrolltab-content').append(jowei)
+            
+        }
+        $('#J_ScrollTab').scrollTab({
+        initIndex: 0 // 初始化即高亮洗衣机选项卡
+    });
+
+    var diowi = $('.jwijjig').width()
+      console.log();
+      $('.jwijjig').height(diowi * 0.6)
+     
+    }
+</script>
+</body>
+</html>

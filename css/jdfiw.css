@@ -1,0 +1,188 @@
+*{
+    font-family: '微软雅黑' !important;
+}
+body{
+    background: #f8f8f8 !important;
+}
+.lunbokkk{
+    width: 100%;
+    position: relative;
+
+}
+.xiaoyuan2{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(148, 148, 148, 0.548);
+    text-align: left;
+    line-height: 35px;
+    color: white;
+    font-size: .4rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    z-index: 8989;
+}
+.xiaoyuan{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(148, 148, 148, 0.548);
+    text-align: left;
+    line-height: 35px;
+    color: white;
+    font-size: .4rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 8989;
+}
+.xiaoyuan a {
+    display: block;
+    text-align: center;
+    padding: 0px !important;
+    width: 100%;
+  
+    
+}
+
+.xiaoyuan2 a {
+    display: block;
+    text-align: center;
+    padding: 0px !important;
+    width: 100%;
+  
+    
+}
+
+.navbar-item .back-ico:before, .navbar-item .next-ico:before{
+    color: white !important;
+}
+.navbar-item{
+    color: white !important;
+}
+.headinfo{
+    padding: 15px;
+}
+.sdfji{
+    font-size: .5rem;
+    color: rgb(255, 51, 0);
+}
+.fjoiwjie{
+    font-size: .4rem;
+    color: rgb(255, 51, 0);
+}
+.titleh{
+    font-weight: bold;
+    font-size: .35rem;
+}
+.kjijw{
+    display: inline-block;
+    float: right;
+    background: orangered;
+    padding: 2px 5px;
+    font-size: .35rem;
+    color: rgb(255, 255, 255);
+}
+.kjijwd{
+    display: inline-block;
+    color: rgb(163, 163, 163);
+    font-size: .35rem;
+}
+.m-cell{
+    margin-bottom: 15px;
+}
+.m-cell:after{
+    border: none;
+}
+.goumai{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 1.3rem;
+    background: white;
+    
+    z-index: 5599;
+}
+.xiaofang{
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: .4rem;
+
+}
+.fdsfs{
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    right: 130px;
+    line-height: .5rem !important;
+}
+.fdsfss{
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    line-height: .5rem !important;
+}
+.dfwegeg img{
+width: 100%;
+}
+.guigedds{
+    width: 100%;
+    height: 8rem;
+    background: white;
+}
+.actionsheet-item{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.m-actionsheet{
+    background: transparent;
+}
+.actionsheet-action{
+    margin: 0px;
+}
+.actionsheet-item:after{
+    border: none !important;
+    
+}
+.actionsheet-item{
+    margin: 0px;
+}
+.jiowewkp{
+    width: 100%;
+    padding:20px;
+    font-size: .4rem;
+}
+.jiowifeg{
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    background: rgb(224, 224, 224);
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+    border: 2px solid white;
+}
+.jiowifeg2{
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    background: rgb(224, 224, 224);
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+    border: 2px solid white;
+}
+.dsfhr{
+    margin: 0px;
+}
+.dison{
+    display: none;
+}
+.ddfsdfgh{
+    display: inline-block;
+}
+

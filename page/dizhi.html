@@ -1,0 +1,137 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/updata.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+        <header class="m-navbar borders">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">新建收货地址</span>
+                </div>
+              
+            </header>
+            <div class="m-cell">
+                    <div class="cell-item">
+                        <div class="cell-left">收货人：</div>
+                        <div class="cell-right"><input type="text" class="cell-input name fjiwje" placeholder="" autocomplete="off" /></div>
+                    
+                    </div>
+                    <div class="cell-item">
+                            <div class="cell-left">手机号码：</div>
+                        <div class="cell-right"><input type="text"  class="cell-input phone fjiwje"  placeholder="" autocomplete="off" /></div>
+                    </div>
+                    <label for="J_Address">
+                    <div class="cell-item fsds">
+                        <div class="cell-left">所在地区：</div>
+                        
+                    <div class="cell-right"><input type="text"  class="cell-input dz fjiwje" readonly id="J_Address"  placeholder="请选择收货地址" autocomplete="off" /></div>
+                 
+                        <i class="icon-location fsdfewrg"></i>
+                    
+                </div>
+            </label>
+                <div class="cell-item fsds">
+                    <div class="cell-left">详细地址：</div>
+                <div class="cell-right"><input type="text"  class="cell-input xxlocal fjiwje" placeholder="道路-小区-楼号-门牌号" autocomplete="off" /></div>
+            </div>
+            
+                
+                </div>
+                <div class="fwenjngr">
+                        <div class="xiaokuai" onclick=xuanse(this)></div> <span class="wjiowww">是否将此地址设置为默认地址</span>
+                </div>
+              
+          
+            <button type="submit" class="btn-block btn-warning  dfswefw"  id="J_ToastS">保存</button>
+            
+          
+            <script src="../js/ydui.citys.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+    <script>
+        var $address = $('#J_Address');
+
+$address.citySelect();
+
+$address.on('click', function () {
+    $address.citySelect('open');
+});
+
+$address.on('done.ydui.cityselect', function (ret) {
+    /* 省：ret.provance */
+    /* 市：ret.city */
+    /* 县：ret.area */
+    $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+});
+    // 1新增地址
+
+        $('.dfswefw').on("touchend",function () {
+            var str ={
+                type:0,
+                ismr:ismr,
+                name:$('.name').val(),
+                phone:$('.phone').val(),
+                dz:$('.dz').val(),
+                xxlocal:$('.xxlocal').val(),
+                qm:window.localStorage['signature']
+            }
+            console.log(str);
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/dzsj.php",
+                data: str,
+                success: function (response) {
+                    console.log(response);
+                    
+                }
+            });
+        })
+
+var ismr = '1';
+    function back() {
+              history.back()
+          }
+          function xuanse() {
+              document.getElementsByClassName('xiaokuai')[0].style.cssText = "background:rgb(238, 109, 70)"
+              $('.xiaokuai').attr("onclick","qx()")
+              ismr = 0;
+          }
+          function qx() {
+              $('.xiaokuai').css({"background":"white"})
+              $('.xiaokuai').attr("onclick","xuanse()")
+              ismr = 1;
+          }
+
+          $('#J_ToastS').on('click', function () {
+            YDUI.dialog.toast('保存成功', 'success', 1000);
+            setTimeout(() => {
+                history.back()
+            }, 1000);
+        });
+    </script>
+</html>
+
+
+

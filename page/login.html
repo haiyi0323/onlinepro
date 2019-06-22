@@ -1,0 +1,164 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+    <div class="ggimg">
+        <div class="kkkks">
+                <div class="glyphicon glyphicon-menu-left fldds"></div>
+        </div>
+     
+        <img src="https://i0.tuanimg.com/ms/zhe800m/dist/img/passport/m_banner_01.png" alt="">
+    </div>
+
+    <div id="J_Tab" class="m-tab">
+            <ul class="tab-nav">
+                <li class="tab-nav-item tab-active yangshs"><a href="javascript:;">手机号验证登录</a></li>
+                <li class="tab-nav-item yangshs"><a href="javascript:;">账号密码登录</a></li>
+               
+            </ul>
+            <div class="tab-panel ">
+                <div class="tab-panel-item tab-active ">
+                        <div class="jiji">
+                                <div class="col-xs-2 maree">
+                                        <label for="inp1" class="lablea"><span class="glyphicon glyphicon-user"></span></label>
+                                  </div>
+                                    
+                                      <div class="col-xs-10 ">
+                                              <input type="text" id="inpp1" class="form-control input-lg" placeholder="请输入手机号">
+                                            </div>
+                        </div>
+                          
+                   
+                    
+                      <div class="jiji">
+
+                            <div class="col-xs-2 maree">
+                                    <label for="inp1" class="lablea"><span class="glyphicon glyphicon-search"></span></label>
+                              </div>
+                                
+                                  <div class="col-xs-6 ">
+                                          <input type="text" id="inpp2" class="form-control input-lg" placeholder="请输入验证码">
+                                        </div>
+                                        <div class="col-xs-4 ">
+                                             <span class="jiwoei">获取验证码</span>
+                                              </div>
+                      </div>
+                      <div class="jijo">
+                            <button type="button" class="btn-block btn-primary btn-danger">登录</button>
+                      </div>
+                         
+                             
+
+                </div>
+               
+                <div class="tab-panel-item ">
+                        <div class="jiji">
+                                <div class="col-xs-2 maree">
+                                        <label for="inp1" class="lablea"><span class="glyphicon glyphicon-user"></span></label>
+                                  </div>
+                                    
+                                      <div class="col-xs-10 ">
+                                              <input type="text" id="inp1" class="form-control input-lg" placeholder="请输账号">
+                                            </div>
+                        </div>
+                          
+                   
+                    
+                      <div class="jiji">
+
+                            <div class="col-xs-2 maree">
+                                    <label for="inp1" class="lablea"><span class="glyphicon glyphicon-search"></span></label>
+                              </div>
+                                
+                                  <div class="col-xs-10 ">
+                                          <input type="text" id="inp2" class="form-control input-lg" placeholder="请输入密码">
+                                        </div>
+                                        <!-- <div class="col-xs-4 ">
+                                             <span class="jiwoei">获取验证码</span>
+                                              </div> -->
+                                            
+                      </div>
+                      <p class="fweijo">
+                          <a href="./resirt.html">   <span>快速注册</span></a>
+                         
+                          <a href="#"> <span class="fr">忘记密码</span></a> 
+                        </p>
+                      <div class="jijo">
+                            <button type="button" class="btn-block btn-primary btn-danger" id="loin">登录</button>
+                      </div>
+                         
+
+
+                </div>
+               
+            </div>
+        </div>
+        
+
+
+
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+<script>
+      var $tab = $('#J_Tab');
+
+$tab.tab({
+    nav: '.tab-nav-item',
+    panel: '.tab-panel-item',
+    activeClass: 'tab-active'
+});
+
+$tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
+    console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+});
+
+$tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
+    console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+});
+
+$('#loin').on("touchend",function () {
+    var str ={
+        username:$('#inp1').val(),
+        password:$('#inp2').val()
+    }
+    console.log(str);
+    
+
+    $.ajax({
+        type: "get",
+        url: "http://localhost/phpbox/onlinepro/php/execute/login.php",
+        data: str,
+        // dataType: "dataType",
+        success: function (response) {
+            console.log(response);
+            window.localStorage['signature'] = JSON.parse(response).data.sign;
+            YDUI.dialog.toast('登录成功', 'success', 1500);
+                    setTimeout(() => {
+                        window.location.href = '../index.html'
+                    }, 1500);
+        }
+    });
+})
+
+
+</script>
+</html>

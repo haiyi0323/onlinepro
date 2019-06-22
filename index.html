@@ -1,0 +1,284 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="./frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="./css/index.css">
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./font/iconfont3.css">
+    <!-- <link rel="stylesheet" href="./font/iconfont4.css"> -->
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="./frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+
+    <style>
+        .icon {
+          width: .55rem;
+          height: .55rem;
+          vertical-align: -0.15em;
+          fill: currentColor;
+          overflow: hidden;
+        }
+        </style>
+</head>
+<body>
+    <!-- 代码区 g-scrollview-->
+    <section class="">
+        <!-- 头部 -->
+        <!-- <header class="m-navbar headernab">
+            <a href="./page/search.html" class="navbar-item dfdshyy">
+                <i class=" dsfsdfwe"></i>
+            </a>
+            <div class=" dsfsdfwesa">
+                
+            </div>
+            <a href="./page/fenleiye.html" class="navbar-item">
+                <i class="icon-type dsfsdfwe"></i>
+            </a>
+            
+        </header> -->
+
+        <header class="ijioiojir">
+            <div class="jodjogpp">
+                    <a href="./page/search.html" class="floatl">
+                        <i class=" icon-search dsfsdfwe"></i>
+                    </a>
+                    
+                    <div class="jojirg" onclick=search()> 搜索一下吧</div>
+                    <a href="./page/fenleiye.html" class="floatr">
+                        <i class="icon-type dsfsdfwe"></i>
+                    </a>
+            </div>
+           
+            
+        </header>
+    <div class="page1">
+        <!-- 内容区 -->
+        <div class="margint"></div>
+       
+         <!-- 轮播图 -->
+        <div class="lunbo">
+            <div class="m-slider" id="J_Slider">
+                <div class="slider-wrapper">
+                   
+                </div>
+                <div class="slider-pagination"></div><!-- 分页标识 -->
+            </div>
+        </div>
+        
+<!-- 主流分类 -->
+<div class="m-grids-4 dfdsfwerrt">
+    <a href="#" class="grids-item ">
+        <div class="grids-txt"> <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-nanzhuang"></use>
+          </svg> <div class="dftht">男装</div> </div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-lianyiqun"></use>
+          </svg><div class="dftht">连衣裙</div> </div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-banshenqun"></use>
+          </svg><div class="dftht">半身裙</div></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-duanqun"></use>
+          </svg><div class="dftht">短裙</div></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-nvbao"></use>
+          </svg><div class="dftht">包包</div></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-dadiku"></use>
+          </svg><div class="dftht">打底裤</div></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-nvxie"></use>
+          </svg><div class="dftht">女鞋</div></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-neiyi"></use>
+          </svg><div class="dftht">内衣</div></div>
+    </a>
+  
+</div>
+<!-- 列表控件 g-scrollview -->
+<section id="J_List">
+        <div id="J_ListContent"></div>
+    </section>
+    </div>
+    <!-- 登录页 --></section>
+
+     
+       
+
+<!--  -->
+    
+        <footer class="m-tabbar tabbar-fixed">
+            <a href="#" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <i class="iconfont">&#xe619;</i>
+                </span>
+                <span class="tabbar-txt">首页</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                <i class="iconfont">
+                    &#xe61b;
+                </i>
+                <span class="tabbar-txt">衣媒</span>
+            </a>
+            <a href="#" class="tabbar-item">
+                    <span class="tabbar-icon">
+                        <i class="iconfont">&#xe621;</i>
+                    </span>
+                    <span class="tabbar-txt">购物车</span>
+                </a>
+            <a href="#" class="tabbar-item">
+                    <span class="tabbar-icon">
+                        <i class="iconfont">&#xe60d;</i>
+                    </span>
+                    <span class="tabbar-txt">个人中心</span>
+                </a>
+        </footer>
+    </section>
+
+  
+
+
+<!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="./frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+
+
+<script>
+
+$('.lunbo').height( $('.lunbo').width() *0.6)
+$('.lunbo').width( window.screen.width)
+
+
+$('.tabbar-item').eq(0).on("click",function () {
+    location.reload()
+    
+})
+$('.tabbar-item').eq(1).on("click",function () {
+    location.href="./page/yimei.html"
+    
+})
+$('.tabbar-item').eq(2).on("click",function () {
+    location.href="./page/shopcar.html"
+    
+})
+$('.tabbar-item').eq(3).on("click",function () {
+    location.href="./page/wode.html"
+   
+   
+})
+
+
+
+
+</script>
+<script src="./font/iconfont4.js"></script>
+<script src="./js/gong.js"></script>
+</body>
+
+<script>
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/lunbo.php",
+        data: {type:0},
+        success: function (response) {
+            var jioii = JSON.parse(response);
+            console.log(jioii.data);
+            for (let i = 0; i < jioii.data.length; i++) {
+                var jojoewp = $('<div>')
+                jojoewp.attr("class","slider-item")
+                jojoewp.html(
+                `
+                    
+                        <a href=${jioii.data[i].aurl}>
+                            <img src=${jioii.data[i].imgurl}>
+                        </a>
+                   
+                `
+            )
+                        $('.slider-wrapper').append(jojoewp)
+            }
+            $('.lunbo').height( $('.lunbo').width() *0.6)
+            $('#J_Slider').slider({
+        speed: 200,
+        autoplay: 2000,
+        lazyLoad: true
+    });
+
+
+            
+        }
+    });
+
+
+
+
+        $.ajax({
+            url: 'http://localhost/phpbox/onlinepro/php/execute/shoplist.php',
+            data: {type:8},
+            success: function (ret) {
+                /* 假设ret.list为后端返回的列表数组 */
+    
+                var jiosj = JSON.parse(ret)
+                /* 用你喜欢的方法将获取到的数据拼接成HTML，然后插入；*/
+                /* 建议使用模板引擎，示例使用artTemplate；https://github.com/aui/artTemplate */
+               console.log(jiosj.data);
+               for (let i = 0; i < jiosj.data.length; i++) {
+                var shangping = $('<div>')
+                shangping.attr("class","kfofjjw")
+                shangping.attr("onclick","xiangqingy(this)")
+                shangping.html(
+                    `
+                    
+                    <div class="joiiasa" >
+                            <div class="imgkkk">
+                                    <img src=${jiosj.data[i].zhuurl} alt="">
+                            </div>
+                            <div class="jfijiw">
+                                <p class="fdsdf">${jiosj.data[i].title}</p>
+                                <p class="fdsdfsa"><span class="xianjia">￥</span><span class="iwnurj">${ parseInt(jiosj.data[i].price * (jiosj.data[i].zhekou/10))  }</span> <span class="yuanja">${jiosj.data[i].price}</span></p>
+                                <p style="display:none">${jiosj.data[i].goosid}</p>
+                            </div>
+                        </div>
+           
+                    `
+                )
+                $('#J_ListContent').append(shangping);
+                   
+               }
+        
+            }
+        })
+
+ 
+function xiangqingy(eq) {
+      var jijowfs = eq. firstElementChild.lastElementChild.lastElementChild.innerText;
+        window.location.href = "./page/xiangqingy.html?ids ="+jijowfs;
+    }
+
+</script>
+</html>

@@ -1,0 +1,103 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/index.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+    <header class="m-navbar">
+        <a href="#" class="navbar-item" onclick=back()>
+            <i class="back-ico"></i>
+        </a>
+        <div class="navbar-center">
+            <span class="navbar-title">搜索列表</span>
+        </div>
+       
+    </header>
+
+    <div class="djifsji">
+
+    </div>
+
+
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+    <script>
+        var jiji = location.search;
+     var dfssf = jiji.split('=')[1]
+      var jisooe = decodeURI(dfssf);
+    
+    
+
+     var str = {
+              key: jisooe,
+              type:55,
+            }
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/gooslist.php",
+                data: str,
+                success: function (response) {
+                  var jio = JSON.parse(response)
+                  console.log(jio.data);
+                  
+                  if (jio.data) {
+                    for (let i = 0; i < jio.data.length; i++) {
+                var shangping = $('<div>')
+                shangping.attr("class","kfofjjw")
+                shangping.attr("onclick","xiangqingy(this)")
+                shangping.html(
+                    `
+                    
+                    <div class="joiiasa" >
+                            <div class="imgkkk">
+                                    <img src=${jio.data[i].zhuurl} alt="">
+                            </div>
+                            <div class="jfijiw">
+                                <p class="fdsdf">${jio.data[i].title}</p>
+                                <p class="fdsdfsa"><span class="xianjia">￥</span><span class="iwnurj">${ parseInt(jio.data[i].price * (jio.data[i].zhekou/10))  }</span> <span class="yuanja">${jio.data[i].price}</span></p>
+                                <p style="display:none">${jio.data[i].goosid}</p>
+                            </div>
+                        </div>
+           
+                    `
+                )
+                $('.djifsji').append(shangping);
+                   
+               }
+
+
+
+                  }
+                    
+                }
+            });
+
+
+            function xiangqingy(eq) {
+      var jijowfs = eq. firstElementChild.lastElementChild.lastElementChild.innerText;
+        window.location.href = "./xiangqingy.html?ids ="+jijowfs;
+    }
+    </script>
+</html>
+
+
+

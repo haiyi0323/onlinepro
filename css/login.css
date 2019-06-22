@@ -1,0 +1,75 @@
+*{
+    font-family: "微软雅黑"
+}
+
+.ggimg{
+    width: 100%;
+    position: relative;
+}
+.ggimg img{
+    width: 100%;
+}
+.dlfl{
+   border: none;
+}
+.yangshs{
+    font-size: 0.3rem;
+    line-height: 1rem;
+}
+.lablea{
+    display: inline-block;
+    font-size: .6rem;
+    vertical-align: middle;
+    color: rgb(214, 214, 214)
+
+}
+.verdd{
+    vertical-align: bottom;
+}
+.maree{
+    margin-top: 6px;
+  
+}
+.jiji{
+    margin: 10px;
+    width: 100%;
+    height: 50px;
+}
+.jijo{
+    width: 85%;
+    margin: 30px auto;
+}
+.jiwoei{
+    font-size: .32rem;
+    position: relative;
+    top: 10px
+}
+.fr{
+    float: right
+}
+.fweijo{
+    margin: 10px;
+    color: rgb(207, 207, 207);
+}
+.fl{
+    float: left
+}
+.kkkks{
+    width: 30px;
+    height: 30px;
+    background: #666666;
+    opacity: 0.8;
+    border-radius: 50%;
+    color: white;
+    font-size: .35rem;
+    text-align: center;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   
+}
+.fldds{
+  
+    text-align: center;
+    margin: 5px;
+}

@@ -1,0 +1,166 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css"/>
+    <link rel="stylesheet" href="../css/updata.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+<!-- 头部 -->
+        <header class="m-navbar ">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">我的地址</span>
+                </div>
+              
+            </header>
+
+          
+                  
+                  
+
+
+            <div class="alllocation">
+                
+              
+            </div>
+            <a href="./dizhi.html">  <button type="submit" class="btn-block btn-warning fsdfwwe " >新增地址</button>
+            </a>
+          
+
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+    <script>
+        var ismr = '1';
+        function kksds() {
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/dzsj.php",
+                data: {type:1,qm:window.localStorage['signature']},
+                success: function (response) {
+                    var wddz = JSON.parse(response)
+                    console.log(wddz.data);
+                    if (wddz.data.length>=1) {
+                        xrym(wddz.data) 
+                    }else{
+                        $('.alllocation').html(
+                            `
+                            <div class="kkiw">
+                        <img src="../img/xingxing.png" alt="">
+                        <br>
+                        <p class="tc">暂时还没有地址哦！</p>
+                        <p class="tc">快去新增一个吧</p>
+                </div>
+                            `
+                        )
+                    }
+                   
+                    
+                }
+            });
+        }
+        kksds();
+
+    function back() {
+              history.back()
+          }
+          function xrym(array) {
+              var gsdig = 'inlineRadio';
+              
+
+              for (let i = 0; i < array.length; i++) {
+                var jiwoi = $('<div>')
+                jiwoi.html(`
+                <div class="bigwddzk" onclick=set(this)>
+                    <p class="namesf">${array[i].username} </p><p class="namesf">${array[i].phone}</p>
+                    <p class="xxdzdfs">${array[i].suo + array[i].xxdz}</p>
+                    <label class="radio-inline sdfwg"onclick=iiwwe(this)  for="${gsdig+i}">
+                            <input type="radio" name="inlineRadioOptions" id="${gsdig+i}" value="${array[i].id}"></label> <span class="iinfwe">设为默认地址</span>  <span class="iinfwe icon-feedback fr" ></span> <span class="iinfwe icon-delete fr" onclick=del(this)>${array[i].id}</span>
+
+               </div>
+                `)
+
+                  $('.alllocation').append(jiwoi)
+                  
+              }
+          }
+
+
+
+          function xuanse(eq) {
+              eq.style.cssText = "background:rgb(238, 109, 70)"
+              $('.sdfwg').attr("onclick","qx()")
+              ismr = 0;
+          }
+          function qx() {
+              $('.sdfwg').css({"background":"white"})
+              $('.sdfwg').attr("onclick","xuanse()")
+              ismr = 1;
+          }
+
+          function iiwwe(eq) {
+            window.event? window.event.cancelBubble = true : e.stopPropagation();
+              $('.sdfwg').css({"background":"white"})
+              eq.style.cssText="background:rgb(238, 109, 70)"
+    
+              console.log( $("input[name='inlineRadioOptions']:checked").val());
+              var str = { 
+                    type:6,
+                  vla : $("input[name='inlineRadioOptions']:checked").val(),
+                  qm:window.localStorage['signature']
+              }
+              console.log(str);
+              
+              $.ajax({
+                  type: "post",
+                  url: "http://localhost/phpbox/onlinepro/php/execute/dzsj.php",
+                  data: str,
+                  success: function (response) {
+                      console.log(response);
+                      
+                  }
+              });
+            
+          }
+         
+          function del(eq){
+            window.event? window.event.cancelBubble = true : e.stopPropagation();
+             eq.parentNode.remove();
+  
+             
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/dzsj.php",
+                data: {
+                    type:2,
+                    id:eq.innerText,
+                    qm:window.localStorage['signature']
+                },
+                success: function (response) {
+                    console.log(response);
+                    location.reload()
+                }
+            });
+          }
+    </script>
+</html>
+
+
+

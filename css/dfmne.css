@@ -1,0 +1,72 @@
+body{
+    font-family: '微软雅黑' !important;
+}
+.joiiasa{
+    width: 100%;
+    display: inline-block;
+    height: auto;
+  
+    font-size: .35rem;
+}
+.imgkkk{
+    width: 100%;
+}
+.imgkkk img{
+    width: 100%;
+}
+.jiwoeosa{
+    color: red;
+    padding: 0px;
+    padding-left: .25rem;
+    margin: 2px;
+}
+.efwef{
+    float: right;
+    color: black;
+    margin-right: .25rem;
+    }
+
+
+
+
+    .kfofjjw{
+        width: 50%;
+        display: inline-block;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 8px;
+    }
+    .jfijiw{
+        text-align: center;
+    }
+    .fdsdf{
+        margin: 15px 2px 5px 2px;
+        padding: 0px 5px;
+        white-space:nowrap; 
+        overflow:hidden;
+         text-overflow:ellipsis;
+         font-size: .32rem;
+    }
+    .fdsdfsa{
+        text-align: left;
+        margin: 4px;
+        padding: 0px 5px;
+        white-space:nowrap; 
+        overflow:hidden;
+         text-overflow:ellipsis;
+    }
+    .xianjia{
+        font-size: .3rem;
+        color: rgb(238, 37, 37);
+    }
+    .iwnurj{
+        font-size: .4rem;
+        color: rgb(238, 37, 37);
+    }
+    .yuanja{
+        color: rgb(187, 187, 187);
+        font-size: .25rem;
+        text-decoration:line-through
+    }
+    .list{
+        width: 100%
+    }

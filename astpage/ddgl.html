@@ -1,0 +1,122 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/fahuo.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+        <header class="m-navbar">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">发货管理</span>
+                </div>
+                
+            </header>
+    <div class="padd">
+        <!-- <div class="kuai">
+            <div class="renxx">
+                <p> <span>姓名:</span class="fjidsj"><span></span> <span>电话:</span><span class="fjidsj"></span></p>
+                <p>详细地址: <span class=" jijid"></span></p>
+            </div>
+
+
+            <div class="imgkkkk">
+                <img src="../img/headimg.png" alt="">
+            </div>
+            <div class="shangpxx">
+                <span>颜色:</span>  <span class="jijjij">红色</span>
+                <span>尺码:</span> <span class="jijjij">2xl</span>
+                <span>数量:</span>  <span class="jijjij">5</span>
+              <div class="fukuan">
+                  <span class="fsggs"> 合计：</span><span class="fjiwoe">8888</span>
+              </div>
+            </div>
+            
+                <button class="fahuo" onclick= fahuo()>发货</button>
+
+        </div> -->
+    </div>
+
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+    <script>
+         chaid();
+
+setTimeout(() => {
+    $.ajax({
+            type: "post",
+            url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+            data: {    type :65},
+            success: function (response) {
+                console.log(response);
+                var ffs = JSON.parse(response);
+                console.log(ffs.data);
+
+                for (let i = 0; i < ffs.data.length; i++) {
+                    var didv = $('<div>')
+                        didv.attr("class","kuai")
+                        didv.html(`
+                      
+                        <div class="renxx">
+                                <div class="disno">${ffs.data[i].id}</div>
+                <p> <span>姓名:<span class="fjidsj1">${ffs.data[i].name}<span></span>  <span class="fjidsj">电话:<span>${ffs.data[i].phone}</span></span></p>
+                <p>详细地址: <span class=" jijid">${ffs.data[i].xzdz}</span></p>
+            </div>
+
+
+            <div class="imgkkkk">
+                <img src=${ffs.data[i].zhuurl} alt="">
+            </div>
+            <div class="shangpxx">
+                <span>颜色:</span>  <span class="jijjij">${ffs.data[i].color}</span>
+                <span>尺码:</span> <span class="jijjij">${ffs.data[i].size}</span>
+                <span>数量:</span>  <span class="jijjij">${ffs.data[i].num}</span>
+              <div class="fukuan">
+                  <span class="fsggs"> 合计：</span><span class="fjiwoe">${ffs.data[i].allprice}</span>
+              </div>
+            </div>
+            
+                <button class="fahuo" onclick= fahuo(this)>发货</button>
+
+                        
+                        `)
+                    
+                        $('.padd').append(didv)
+                }
+                
+            }
+        });
+    
+}, 200);
+     
+
+    function fahuo(eq) {
+     var dfsdf =  eq.parentElement.firstElementChild.firstElementChild.innerText
+        location.href = "./fahuo.html?items="+dfsdf
+    }
+    </script>
+</html>
+
+
+

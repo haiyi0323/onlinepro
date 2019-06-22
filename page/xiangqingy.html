@@ -1,0 +1,451 @@
+<!-- 引入文件 -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>商品页面</title>
+    <meta
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+      name="viewport"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/jdfiw.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+    <style>
+      .icon {
+        width: 0.55rem;
+        height: 0.55rem;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lunbokkk">
+      <div class="m-slider" id="J_Slider">
+        <div class="slider-wrapper">
+          <!-- <div class="slider-item">
+                            <a href="#">
+                                <img src="http://static.ydcss.com/uploads/ydui/1.jpg">
+                            </a>
+                        </div>
+                        <div class="slider-item">
+                            <a href="#">
+                                <img src="http://static.ydcss.com/uploads/ydui/2.jpg">
+                            </a>
+                        </div>
+                        <div class="slider-item">
+                            <a href="#">
+                                <img src="http://static.ydcss.com/uploads/ydui/3.jpg">
+                            </a>
+                        </div>
+                         -->
+        </div>
+        <div class="slider-pagination"></div>
+        <!-- 分页标识 -->
+      </div>
+
+      <div class="xiaoyuan">
+        <a href="#" class="navbar-item" onclick="back()">
+          <i class="back-ico"></i>
+        </a>
+      </div>
+      <div class="xiaoyuan2">
+        <a href="#" class="navbar-item jiagou">
+          <i class="icon-shopcart-outline"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="m-cell dashixiong"></div>
+
+    <div class="m-cell">
+      <a class="cell-item" href="javascript:;">
+        <div class="cell-left">
+          <i class="cell-icon icon-order"></i>查看评论
+        </div>
+        <div class="cell-right cell-arrow"></div>
+      </a>
+      <a class="cell-item" href="javascript:;">
+        <div class="cell-left">
+          <i class="cell-icon icon-order"></i>领取优惠券
+        </div>
+        <div class="cell-right cell-arrow"></div>
+      </a>
+    </div>
+
+    <div class="m-cell">
+      <a class="cell-item" href="javascript:;">
+        <div class="cell-left">
+          <i class="cell-icon icon-order"></i>详细参数
+        </div>
+        <div class="cell-right cell-arrow"></div>
+      </a>
+    </div>
+
+    <div class="xiangqii"></div>
+
+    <div class="goumai">
+      <div class="xiaofang">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-kefu"></use>
+        </svg>
+      </div>
+      <div class="xiaofang">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-shoucang_"></use>
+        </svg>
+      </div>
+
+      <a href="javascript:;" class="btn btn-warning fdsfs jiagou">加入购物车</a>
+      <a href="javascript:;" class="btn btn-danger fdsfss qianggou">立即抢购</a>
+    </div>
+    <div class="m-actionsheet" id="J_ActionSheet">
+      <a href="#" class="actionsheet-item"></a>
+      <div class="guigedds">
+        <p class="jiowewkp">
+          <span>请选择颜色</span>
+        </p>
+        <div class="yansequ"></div>
+
+        <p class="jiowewkp">
+          <span>请选择尺码</span>
+        </p>
+        <div class="chimaqu"></div>
+        <p class="jiowewkp">
+          <span
+            class="m-spinner"
+            data-ydui-spinner="{input: '.J_Input', add: '.J_Add', minus: '.J_Del'}"
+            ><!-- 添加data-ydui-spinner属性并添加参数即可 -->
+            <a href="javascript:;" class="J_Del"></a>
+            <input type="text" class="J_Input" placeholder="" />
+            <a href="javascript:;" class="J_Add"></a>
+          </span>
+        </p>
+      </div>
+      <a
+        href="javascript:;"
+        class="actionsheet-action btn-block btn-warning dsfhr"
+        id="J_Cancel"
+        >加入购物车</a
+      >
+    </div>
+
+    <div class="m-actionsheet" id="J_ActionSheet2">
+      <a href="#" class="actionsheet-item"></a>
+      <div class="guigedds">
+        <p class="jiowewkp">
+          <span>请选择颜色</span>
+        </p>
+        <div class="yansequ"></div>
+
+        <p class="jiowewkp">
+          <span>请选择尺码</span>
+        </p>
+        <div class="chimaqu"></div>
+        <p class="jiowewkp">
+          <span class="m-spinner" id="J_Quantity">
+            <a href="javascript:;" class="J_Del"></a>
+            <input type="text" class="J_Input" value="1" placeholder=""/>
+            <a href="javascript:;" class="J_Add"></a>
+        </span>
+        
+        </p>
+      </div>
+
+      <a
+        href="javascript:;"
+        class="actionsheet-action  btn-block btn-warning dsfhr2"
+        id="J_Cancel2"
+        >确定</a
+      >
+    </div>
+
+    <script src="../font/iconfont6.js"></script>
+    <script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 引入YDUI脚本 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+    <!-- Bootstrap 4 requires Popper.js -->
+    <script
+      src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script>
+    var colorovr;
+    var chimaovr;
+    var numovr;
+
+    var jiiis = location.search;
+    var jisio = jiiis.split("=");
+
+    $(".xiaofang").width($(".xiaofang").height());
+    $.ajax({
+      type: "post",
+      url: "http://localhost/phpbox/onlinepro/php/execute/xiangqing.php",
+      data: {
+        type: 0,
+        id: jisio[1]
+      },
+
+      success: function(response) {
+        var shuju = JSON.parse(response);
+        zhuurla = shuju.data[0].zhuurl;
+        tetless = shuju.data[0].title;
+        zhelsf = shuju.data[0].zhekou;
+        prrega = shuju.data[0].price;
+        console.log(shuju.data);
+        shangshu(shuju.data);
+      }
+    });
+
+    var userid;
+    var zhuurla;
+    var tetless;
+    var zhelsf;
+    var prrega;
+    var jiod = localStorage["signature"];
+
+    $.ajax({
+      type: "post",
+      url: "http://localhost/phpbox/onlinepro/php/execute/chaxx.php",
+      data: {
+        type: 2,
+        qm: jiod
+      },
+      success: function(response) {
+        var sdfghh = JSON.parse(response);
+        userid = sdfghh.data[0].id;
+        console.log(userid);
+      }
+    });
+
+    function bianse(eqi) {
+      console.log(1);
+
+      for (let i = 0; i < $(".jiowifeg").length; i++) {
+        $(".jiowifeg")
+          .eq(i)
+          .css({ border: "2px solid white" });
+      }
+      eqi.style.cssText = "border:2px solid #FF0000";
+    }
+    function bianse1(eqi) {
+      console.log(1);
+      for (let k = 0; k < $(".jiowifeg2").length; k++) {
+        $(".jiowifeg2")
+          .eq(k)
+          .css({ border: "2px solid white" });
+      }
+      eqi.style.cssText = "border:2px solid #FF0000";
+    }
+    function shangshu(array) {
+      for (let i = 0; i < array.length; i++) {
+        var jioosew = $("<div>");
+        jioosew.attr("class", "slider-item");
+        jioosew.html(` <a href="#"><img src=${array[i].zhuurl}></a>`);
+        var jioosew2 = $("<div>");
+        jioosew2.attr("class", "slider-item");
+        jioosew2.html(` <img src=${array[i].img2url}>`);
+        var jioosew3 = $("<div>");
+        jioosew3.attr("class", "slider-item");
+        jioosew3.html(` <img src=${array[i].img3url}>`);
+        var jioosew4 = $("<div>");
+        jioosew4.attr("class", "slider-item");
+        jioosew4.html(` <img src=${array[i].img4url}>`);
+        var jioosew5 = $("<div>");
+        jioosew5.attr("class", "slider-item");
+        jioosew5.html(` <img src=${array[i].img5url}>`);
+        var xq = $("<div>");
+        xq.attr("class", "dfwegeg");
+        xq.html(` <img src=${array[i].xiang}> `);
+
+        $(".slider-wrapper").append(jioosew);
+        $(".slider-wrapper").append(jioosew2);
+        $(".slider-wrapper").append(jioosew3);
+        $(".slider-wrapper").append(jioosew4);
+        $(".slider-wrapper").append(jioosew5);
+        $(".xiangqii").append(xq);
+
+        var ershix = $("<div>");
+        ershix.attr("class", "headinfo");
+        ershix.html(
+          `
+            <p class="sdfji"><span class="fjoiwjie">￥</span>${ Math.floor(array[i].price *(array[i].zhekou /10) *100) /100 } <span class="kjijwd">销售量：1.5万+</span><span class="kjijw">免运费</span></p>
+            <p class="titleh">${array[i].title}</p>
+                `
+        );
+        $(".dashixiong").append(ershix);
+      }
+      var jjispe = array[0].color.split(" ");
+      console.log(jjispe);
+      var fsf = 0;
+      for (let k = 0; k < jjispe.length; k++) {
+        fsf++;
+        var lafl = $("<div>");
+        lafl.attr("class", "ddfsdfgh");
+        lafl.html(
+          `
+                    <label for="${"yanse"+fsf}" onclick= bianse(this) class="jiowifeg">${
+            jjispe[k]
+          }</label>
+                    <input type="radio" name="yanse" class="dison yanse" id="${"yanse" +
+                      fsf}" value="${jjispe[k]}">
+                    `
+        );
+        $(".yansequ").append(lafl);
+      }
+
+      var sdfsg = array[0].chima.split(",");
+      console.log(sdfsg);
+      var fss = 0;
+      for (let l = 0; l < sdfsg.length; l++) {
+        fss++;
+        var lafvl = $("<div>");
+        lafvl.attr("class", "ddfsdfgh");
+        lafvl.html(
+          `
+                    <label for="${"chima"+fss}" onclick= bianse1(this) class="jiowifeg2">${sdfsg[l]}</label>
+                    <input type="radio" name="chima" class="dison chima" id="${"chima"+fss}" value="${sdfsg[l]}">
+                    `
+        );
+        $(".chimaqu").append(lafvl);
+      }
+
+      $("#J_Slider").slider({
+        speed: 200,
+        autoplay: 500000,
+        lazyLoad: true
+      });
+    }
+
+    // ------------------------------------------------------
+
+    $(".lunbokkk").height($(".lunbokkk").width());
+
+    var $as = $("#J_ActionSheet");
+
+    $(".jiagou").on("click", function() {
+      $as.actionSheet("open");
+    });
+
+    $("#J_Cancel").on("click", function() {
+      $as.actionSheet("close");
+
+      var joiwe = document.getElementsByName("chima");
+      var sdfwe = document.getElementsByName("yanse");
+      for (let i = 0; i < joiwe.length; i++) {
+        if (joiwe[i].checked) {
+          chimaovr = joiwe[i].value;
+        }
+      }
+      for (let k = 0; k < sdfwe.length; k++) {
+        if (sdfwe[k].checked) {
+          colorovr = sdfwe[k].value;
+        }
+      }
+
+      numovr = $(".J_Input").val();
+
+      $.ajax({
+        type: "post",
+        url: "http:localhost/phpbox/onlinepro/php/execute/shopcar.php",
+        data: {
+          type: 1,
+          userid: userid,
+          goosid: jisio[1],
+          color: colorovr,
+          size: chimaovr,
+          num: numovr,
+          img: zhuurla,
+          name: tetless,
+          zhe: zhelsf,
+          price: prrega
+        },
+        //    dataType: "dataType",
+        success: function(response) {
+          YDUI.dialog.toast("加购成功", "none", 1000);
+        }
+      });
+    });
+    var   numovrd ;
+    /* 自定义事件 */
+    $as
+      .on("open.ydui.actionsheet", function() {
+        $(".goumai").css({ display: "none" });
+      })
+      .on("close.ydui.actionsheet", function() {
+        $(".goumai").css({ display: "block" });
+      });
+    // ====================================
+    var $ass = $("#J_ActionSheet2");
+
+    $(".qianggou").on("click", function() {
+      $ass.actionSheet("open");
+
+      $('#J_Quantity').spinner({
+        input: '.J_Input',
+        add: '.J_Add',
+        minus: '.J_Del',
+        unit: function () {
+            return 1;
+        },
+        max: function () {
+            return (1 + 2 + 3 + 4 + 5) * 5;
+        },
+        callback: function (value, $ele) {
+            // $ele 当前文本框[jQuery对象]
+            // $ele.css('background', '#FF5E53');
+            numovrd = value;
+        }
+    });
+    });
+
+    $("#J_Cancel2").on("click", function() {
+      $ass.actionSheet("close");
+      var joiwe = document.getElementsByName("chima");
+      var sdfwe = document.getElementsByName("yanse");
+      for (let i = 0; i < joiwe.length; i++) {
+        if (joiwe[i].checked) {
+          chimaovr = joiwe[i].value;
+        }
+      }
+      for (let k = 0; k < sdfwe.length; k++) {
+        if (sdfwe[k].checked) {
+          colorovr = sdfwe[k].value;
+        }
+      }
+
+
+
+// 拼接跳转
+var parame=encodeURI(colorovr)
+var parame2=encodeURI(chimaovr)
+      window.location.href =encodeURI("./dingdan.html?"+jisio[1]+","+numovrd+","+parame+","+parame2+"") 
+    });
+
+    /* 自定义事件 */
+    $ass
+      .on("open.ydui.actionsheet", function() {
+        $(".goumai").css({ display: "none" });
+      })
+      .on("close.ydui.actionsheet", function() {
+        $(".goumai").css({ display: "block" });
+      });
+  </script>
+</html>

@@ -1,0 +1,202 @@
+*{
+    font-family: '微软雅黑'!important;
+}
+.dizhixuanze{
+    width: 100%;
+    font-size: 0px;
+    border-bottom: solid 1px rgb(255, 62, 62);
+    padding: 10px 0px;
+}
+.iconss ,.xxxa{
+    display: inline-block;
+}
+.iconss {
+    width: 15%;
+    font-size: .6rem;
+    padding: 5px;
+    text-align: center
+}
+.xxxa{
+    width: 85%;
+    padding: 5px;
+}
+.namesdf span{
+    font-size: .4rem;
+    margin: 0px 5px
+}
+.n3{
+    float: right;
+}
+.dfdssdf{
+    font-size: .35rem;
+}
+.heji{
+    width: 70%;
+    font-size: .4rem;
+    display: inline-block;
+   text-align: right;
+   height: 1rem;
+   line-height: 1rem;
+   padding-right: 20px;
+    
+}
+.tijiao{
+width: 100%;
+font-size: 0px;
+position: fixed;
+bottom: 0px;
+left: 0px;
+}
+.jiesuan{
+    width: 30%;
+    font-size: .4rem;
+    display: inline-block;
+    border-radius: 0px !important;
+    vertical-align: bottom !important;
+}
+.shdz{
+    width: 100%;
+    font-size: .3rem;
+    margin: 0px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(230, 230, 230);
+}
+.btn{
+    height: 1rem;
+    /* line-height: 1.8rem !important; */
+    font-size: .4rem !important;
+}
+
+.jojidfg{
+    color: orangered;
+}
+
+
+.navbar-item i {
+    font-size: .4rem;
+    margin: .1rem;
+    color: rgb(59, 59, 59)
+}
+.shopcar{
+    width: 100%;
+    padding: 10px;
+}
+.list{
+    width: 100%;
+    background: white;
+    border-radius: 7px;
+    padding: 10px;
+    padding-top: 15px;
+    position: relative;
+    margin: 0px 0px 10px;
+}
+.imgkkk{
+    width: 30%;
+ 
+    overflow: hidden;
+    display: inline-block
+}
+.imgkkk img {
+    width: 100%
+}
+.tit{
+    width: 64%;
+    display: inline-block;vertical-align: top;
+    font-size: .35rem;
+    color:rgb(61, 59, 59);
+    margin-left: 3%;
+}
+.m-spinner>a{
+    width: 0.4rem;
+        font-weight: lighter;
+        line-height: .5rem;
+}
+.m-spinner>a, .m-spinner>input{
+    height: 0.5rem;
+}
+.sdfhuwe{
+    width:.6rem;
+    height: .3rem;
+    background: rgb(223, 223, 223);
+    padding: 2px 10px;
+    margin: 0px 5px;
+    font-size: .3rem;
+    vertical-align: middle;
+    border-radius: 5px;
+
+}
+.m-spinner{
+    vertical-align: middle;
+}
+.jsdiw{
+    font-size: .25rem !important;
+}
+.zssvd{
+    margin-bottom: 5px;
+    color:#333;
+}
+.jiojiow{
+    vertical-align: middle;
+    float: right;
+    margin-right: .5rem;
+    font-size: .4rem;
+    color: orangered
+}
+.jiowe{
+    font-size: .32rem;
+    color: orangered;
+    position: relative;
+    left: .05rem;
+}
+.jdioiw{
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(36, 36, 36);
+    border-radius: 50%;
+    vertical-align: top;
+    position: absolute;
+    bottom: 3px;
+    left: 10px;
+}
+.shopcar{
+    padding-bottom: 100px;
+}
+.disno{
+    display: none;
+}
+.dfsf{
+    margin: 10px 0px 20px;
+}
+.dfdsfhthyj{
+    position: fixed;
+    bottom: 60px;
+    left: 0px;
+    width: 100%;
+    background: white;
+    height: 1rem;
+    font-size: 0px;
+}
+.sfsdggg{
+    width: 70%;
+    display: inline-block;
+    font-size: .4rem;
+    line-height: 1rem;
+}
+.dafsgas{
+    width: 30%;
+    font-size: .5rem !important;
+    height: 100%;
+    line-height: .16rem;
+    border-radius: 0px !important;
+}
+.foiuhro{
+    color: red;
+    font-size: .5rem;
+}
+.jdijojg{
+    font-size: .45rem;
+    width: 100%;
+    text-align: center;
+    
+}

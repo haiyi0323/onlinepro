@@ -1,0 +1,87 @@
+*{
+    font-family: '微软雅黑' !important;
+}
+
+body{
+    background: #f5f5f5 !important;
+}
+.padd{
+
+    width: 100%;
+    padding: 10px;
+    
+}
+.kuai{
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    background:  white;
+    position: relative;
+    margin: 10px 0px;
+}
+.imgkkkk{
+    width: 30%;
+    display: inline-block;
+    margin-right: 2%;
+}
+.imgkkkk img{
+    width: 100%;
+  
+}
+.shangpxx{
+    width: 68%;
+    display: inline-block;
+    font-size: .35rem;
+    vertical-align: top;
+    color: #777777;
+}
+.kuai{
+    font-size: 0px;
+}
+.renxx{
+    width: 100%;
+    font-size: .4rem;
+}
+.fjiwoe{
+    color: red;
+    font-size: .4rem;
+
+}
+.jijjij{
+  font-size:  .4rem;
+}
+.fahuo{
+    position: absolute;
+
+    padding: 3px 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    bottom: 10px ;
+    right: 10px;
+    font-size: .35rem;
+}
+.fjidsj{
+    float: right;
+}
+.jijid{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis
+}
+.shangpxx span{
+    font-size: .3rem;
+    color: black;
+}
+.fukuan{
+    margin-top: 15px;
+    font-size: .4rem;
+
+}
+.fjiwoe{
+    color: red !important;
+}
+.jijjij{
+    color: rgb(131, 131, 131) !important;
+    font-size: .35rem !important;
+}
+.disno{
+    display: none;
+}

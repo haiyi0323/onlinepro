@@ -1,0 +1,150 @@
+<!-- 引入文件 -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+      name="viewport"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/dfjnkd.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+  </head>
+  <body>
+    <header class="m-navbar">
+      <a href="#" class="navbar-item" onclick="back()">
+        <i class="back-ico"></i>
+      </a>
+      <div class="navbar-center">
+        <span class="navbar-title">我的订单</span>
+      </div>
+    </header>
+
+    <div class="joodsfj">
+
+
+    </div>
+
+    <!-- <div class="lists">
+      <div class="box">
+        <div class="disno">${array[i].goosid}</div>
+        <div class="imgkkk">
+          <img src="../img/headimg.png" alt="" />
+        </div>
+        <div class="tit">
+          <p class="zssvd">jsadofijasdjidfasdfasdf</p>
+          <p class="dfsf">
+            <span class="jsdiw">颜色：</span>
+            <span class="sdfhuwe"> </span>
+            <span class="jsdiw">尺码：</span>
+            <span class="sdfhuwe"> </span>
+
+            <span class="jsdiw">共<span></span>件</span>
+          </p>
+          <p class="dhusdu">
+            <button class="pinglun">评价</button>
+            <button class="pinglun">退货</button>
+            <span class="jiojiow"><span class="jiowes">合计：</span></span>
+          </p>
+        </div>
+      </div>
+    </div> -->
+
+    <script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 引入YDUI脚本 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+    <!-- Bootstrap 4 requires Popper.js -->
+    <script
+      src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script>
+    chaid();
+
+    setTimeout(() => {
+      console.log(useridg);
+      $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+        data: {
+          type: 66,
+          id: useridg
+        },
+        success: function(response) {
+          console.log(response);
+          var oojdfi = JSON.parse(response);
+          console.log(oojdfi.data);
+
+          for (let i = 0; i < oojdfi.data.length; i++) {
+            var dfsfj = $('<div>')
+                    dfsfj.attr("class","lists")
+                    dfsfj.html(`
+                    <div class="box">
+                    <div class="disno">${oojdfi.data[i].goosid}</div>
+        <div class="imgkkk">
+          <img src=${oojdfi.data[i].zhuurl} alt="" />
+        </div>
+        <div class="tit">
+          <p class="zssvd">${oojdfi.data[i].title}</p>
+          <p class="dfsf">
+            <span class="jsdiws">颜色:<span class=""> ${oojdfi.data[i].color}</span></span>
+            
+            <span class="jsdiws">尺码:<span class=""> ${oojdfi.data[i].size}</span></span>
+           
+
+            <span class="jsdiws">共<span class="">${oojdfi.data[i].num}</span>件</span>
+          </p>
+          <p class="dhusdu">
+            <button class="pinglun" onclick=pingjia()>评价</button>
+            <button class="pinglun" onclick=tuihuo()>更多</button>
+            <span class=""><span class="jiowes">合计:${oojdfi.data[i].allprice}</span></span>
+          </p>
+          <span class="jsdiwss">${oojdfi.data[i].zhuangtai}</span>
+
+          
+        </div>
+    </div>
+                    `)
+
+                   
+                    
+             
+            $('.joodsfj').append(dfsfj)
+          
+            if ($('.jsdiwss').eq(i).text() == 1) {
+                // $('.jsdiwss').eq(i).text(已付款)
+               $('.jsdiwss').eq(i).text("已付款");
+               $('.jsdiwss').eq(i).css({"color":"#009900"})
+            }else if ($('.jsdiwss').eq(i).text() == 0) {
+                $('.jsdiwss').eq(i).text("代付款");
+               $('.jsdiwss').eq(i).css({"color":"#CC0000"})
+            }else if ($('.jsdiwss').eq(i).text() == 2) {
+                $('.jsdiwss').eq(i).text("代收货");
+               $('.jsdiwss').eq(i).css({"color":"#009900"})
+            }else if ($('.jsdiwss').eq(i).text() == 3) {
+                $('.jsdiwss').eq(i).text("交易完成");
+               $('.jsdiwss').eq(i).css({"color":"#FFCC00"})
+            }
+          }
+        }
+      });
+    }, 200);
+  </script>
+</html>

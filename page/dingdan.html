@@ -1,0 +1,428 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/dfdsfd.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+
+        <header class="m-navbar">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>确认订单
+                </a>
+               
+               
+            </header>
+            <div class="dizhixuanze">
+
+                <!-- <div class="iconss">
+                    <i class="icon-location"></i>
+                </div>
+                <div class="xxxa">
+                    <p class="namesdf">
+                        <span class="n1">收货人：司海涯</span>
+                        <span class="n3">18139032041</span>
+                    </p>
+                    <p class="dfdssdf">
+                           积分if京东if静安寺积分iOS积分是东方ID数据佛啊
+                        </p>
+                </div> -->
+
+                <div class="jdijojg" onclick=djijdfji()>还没有地址呢，快去创建一个吧！</div>
+            </div>
+<!--  -->
+            
+<div class="shopcar">
+    
+
+    </div>
+
+<!--  -->
+            <div class="tijiao">
+                <p class="shdz">
+                      
+                </p>
+                <div class="heji">合计：<span></span></div>
+                <a href="javascript:;" class="btn btn-warning jiesuan" onclick=tijiaole()>提交订单</a>
+            </div>
+
+
+
+        
+            
+            <div class="m-keyboard" id="J_KeyBoard">
+                <!-- 自定义内容区域 -->
+                <div style="text-align: right;padding: .15rem .8rem 0;"><a href="http://www.ydui.org" style="color: #666;font-size: .24rem;">忘记密码</a></div>
+                <!-- 自定义内容区域 -->
+            </div>
+            
+        
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+    <script>
+// 先取值
+var iconse = window.location.search;
+        var fens = iconse.split(",");
+        console.log(fens);
+        var goosid = fens[0].split('?')
+
+        goosid = goosid[1]
+    var nums = fens[1]
+
+
+    var color = fens[2]
+    var name=decodeURI(color)
+    var jijs = decodeURI(name)
+
+
+    var size = fens [3]
+    var ssffwe=decodeURI(size)
+    var jodsij = decodeURI(ssffwe)
+    console.log(jodsij);
+    
+
+
+  
+   
+    var allprice;
+    var times;
+   
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/xiangqing.php",
+        data: {
+            type:0,
+            id:goosid
+        },
+        success: function (response) {
+            
+                var jjjsf = JSON.parse(response)
+                console.log(jjjsf.data);
+                xuanran(jjjsf.data)
+                
+        }
+    });
+
+    var jfw = 0;
+
+    var joidj = 0;
+        function xuanran(array) {
+            for (let i = 0; i < array.length; i++) {
+
+jfw++
+
+
+    var djio = $('<div>')
+        djio.attr("class","list")
+        djio.html(`
+        <div class="disno"> ${array[i].goosid}  </div>
+<div class="imgkkk">
+<img src=${array[i].zhuurl} alt="">
+</div>
+<div class="tit">
+    <p class="zssvd">${array[i].title}</p>
+    <p class="dfsf">
+
+         
+                <span class="jsdiw">颜色：</span>
+                <span class="sdfhuwe">
+                    ${jijs}
+                </span>
+                <span class="jsdiw">尺码：</span>
+                <span class="sdfhuwe">
+                    ${jodsij}
+                    </span>
+                    
+                    
+    </p>
+    <p class="dhusdu">
+        <span class="m-spinner J_Quantity" >
+    <a href="javascript:;" class="J_Del"></a>
+    <input type="text" class="J_Input" value="${nums}" placeholder=""/>
+    <a href="javascript:;" class="J_Add"></a>
+</span>
+                <span class="jiojiow"><span class="jiowe">￥</span></span>
+    </p>
+</div>
+
+
+
+        
+        `)
+        $('.shopcar').append(djio)
+        $('.J_Quantity').eq(i).spinner({
+        input: '.J_Input',
+        add: '.J_Add',
+        minus: '.J_Del',
+        unit: function () {
+            return 1 ;
+        },
+        max: function () {
+            return (1 + 2 + 3 + 4 + 5) * 5;
+        },
+        callback: function (value, $ele) {
+            // $ele 当前文本框[jQuery对象]
+            // $ele.css('background', '#FF5E53');
+            $('.jiojiow').eq(i).text("￥" +Math.floor((array[i].price *(array[i].zhekou/10)) * 100) / 100 * value);
+             $('.jojidfg').text( $('.jiojiow').eq(i).text().split('￥')[1])
+
+             joidj = $('.jiojiow').text()
+        }
+    });
+}
+$(".zssvd").each(function(){
+var len=$(this).text().length;   //当前HTML对象text的长度
+;
+
+if(len>20){
+var str="";
+str=$(this).text().substring(0,20)+"...";  //使用字符串截取，获取前30个字符，多余的字符使用“......”代替
+$(this).html(str);                   //将替换的值赋值给当前对象
+}
+})
+        }
+        
+        
+
+
+
+var jiod = localStorage['signature'];
+var userid;
+$.ajax({
+    type: "post",
+    url: "http://localhost/phpbox/onlinepro/php/execute/chaxx.php",
+    data: {
+            type :2,   qm:jiod   },
+   
+    success: function (response) {
+        var sdfghh = JSON.parse(response)
+            userid = sdfghh.data[0].id
+            console.log(sdfghh);
+            huoqumrdz()
+    }
+});
+var dzllll
+var usernamea
+var phonea
+function huoqumrdz() {
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+        data: {type:1,id:userid},
+        success: function (response) {
+            console.log(response);
+            var jidfiow = JSON.parse(response)
+            console.log(jidfiow.data);
+            if (jidfiow.data!='') {
+                dzllll = jidfiow.data[0].suo+jidfiow.data[0].xxdz
+            usernamea = jidfiow.data[0].username;
+            phonea = jidfiow.data[0].phone;
+
+            var jjoe = $('.dizhixuanze');
+            jjoe.attr("onclick","szmrdz()")
+            jjoe.html(
+                `
+                <div class="iconss">
+    <i class="icon-location"></i>
+</div>
+<div class="xxxa">
+    <p class="namesdf">
+        <span class="n1">收货人：${jidfiow.data[0].username}</span>
+        <span class="n3">${jidfiow.data[0].phone}</span>
+    </p>
+    <p class="dfdssdf">
+        ${ jidfiow.data[0].suo + jidfiow.data[0].xxdz}
+        </p>
+</div>
+                `
+            )
+        
+$('.tijiao').html(
+    `
+    <p class="shdz">
+        ${ "收货地址 :"+jidfiow.data[0].suo+jidfiow.data[0].xxdz}
+                </p>
+                <div class="heji">合计：<span class="jojidfg">${joidj}</span></div>
+                <a href="javascript:;" class="btn btn-warning jiesuan" id="J_OpenKeyBoard" onclick=tijiaole()>提交订单</a>
+    
+    `
+)
+            }
+          
+                // --------------------------------------------------
+                var $keyboard = $('#J_KeyBoard');
+
+/* 初始化参数 */
+$keyboard.keyBoard({
+    disorder: false, /* 是否打乱数字顺序 */
+    title: '图兰简芮安全键盘:请输入支付密码' /* 显示标题 */
+});
+
+/* 打开键盘 */
+$('#J_OpenKeyBoard').on('click', function () {
+    $keyboard.keyBoard('open');
+});
+
+/* 六位密码输入完毕后执行 */
+$keyboard.on('done.ydui.keyboard', function (ret) {
+
+   
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/zhifu.php",
+        data: {
+            type:263,
+            userid:userid,
+            pas: ret.password
+        },
+        success: function (response) {
+            console.log(response);
+            var jiosfw = JSON.parse(response)
+
+            if (jiosfw.data.length>0) {
+                YDUI.dialog.toast('支付成功', 'none', 1000);
+                delzhuangtai();
+                fukuanle(); 
+                $keyboard.keyBoard('close');
+            }else{
+                $keyboard.keyBoard('error', '对不起，您的支付密码不正确，请重新输入。');
+            }
+        }
+    });
+
+
+
+    /* 关闭键盘 */
+ 
+});
+
+        }
+    });
+  
+
+
+
+
+
+}
+   
+
+
+  function szmrdz() {
+      window.location.href = "./locationus.html?xgmr =1"
+  }
+
+  var jjsooeowe
+  function tijiaole () {
+      var jioossd = $('.jojidfg').text();
+    var joiwiwer =  jioossd.split("￥")[1];
+    jjsooeowe = Math.round(Math.random()*100000000000)
+    var dabiao = {
+            type:55,
+            shdz:dzllll,
+            goosid:goosid,
+            userid:userid,
+            color:jijs,
+            size: size,
+            allprice:joiwiwer,
+            num:nums,
+            times:new Date().getTime(),
+            ddbh: jjsooeowe,
+            zhuangtai:0,
+            phone:phonea,
+            name:usernamea
+    }
+    console.log(dabiao);
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+        data: dabiao,
+        success: function (response) {
+            console.log(response);
+            // YDUI.dialog.toast('你点了取消', 'none', 1000);
+
+
+            
+        }
+    });
+    
+}
+function delzhuangtai() {
+ var ffdfg  = parseInt(jjsooeowe) 
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+        data: {
+            type:48,
+            ddbh:ffdfg
+        }, 
+        success: function (response) {
+            console.log(response);
+        }
+    });
+    
+}
+
+function fukuanle() {
+      var jioossd = $('.jojidfg').text();
+    var joiwiwer =  jioossd.split("￥")[1];
+    var dabiao2 = {
+            type:55,
+            shdz:dzllll,
+            goosid:goosid,
+            userid:userid,
+            color:jijs,
+            size: size,
+            allprice:joiwiwer,
+            num:nums,
+            times:new Date().getTime(),
+            ddbh:jjsooeowe,
+            zhuangtai:1,
+            name:usernamea,
+            phone:phonea
+            // 代发货
+    }
+    console.log(dabiao2);
+    $.ajax({
+        type: "post",
+        url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+        data: dabiao2,
+        success: function (response) {
+            console.log(response);
+
+
+            
+        }
+    });
+    
+}
+
+
+function djijdfji() {
+    window.location.href="./locationus.html"
+}
+
+    </script>
+</html>
+
+
+

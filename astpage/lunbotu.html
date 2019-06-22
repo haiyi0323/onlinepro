@@ -1,0 +1,146 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/lunbo.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+        <header class="m-navbar">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">设置轮播图</span>
+                </div>
+                
+            </header>
+            <div class="jdfoijwoig">
+                   
+            </div>
+          
+
+            <button type="button" class="btn-block btn-primary dfsnj">提交</button>
+
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+
+    <script>
+ chass();
+        function chass() {
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/lunbo.php",
+                data: {type:0},
+                success: function (response) {
+                    console.log(response);
+                   var jiog =JSON.parse(response)
+                    console.log(jiog.data);
+                    if (jiog.data.length>0) {
+                        var ssff=0;
+                        for (let i = 0; i < jiog.data.length; i++) {
+                            ssff++
+                            $('.dfsnj').css({"display":"none"})
+
+
+                            var jjiis = $('<div>');
+                            jjiis.attr("class","m-cell dfewrwg")
+                                jjiis.html(`
+
+                                <div class="cell-item">
+                                    <div class="cell-left">轮播${ssff}：</div>
+                                    <div class="cell-right"><input type="text"  class="cell-input fdsfhhe1" value="${jiog.data[i].name}" autocomplete="off" /></div>
+                                </div>
+                            <div class="cell-item">
+                            <div class="cell-left">选择图片：</div>
+                            <div class="cell-right"> <label for="image${ssff}" class="ioeijgw">  <img src= ${jiog.data[i].imgurl} alt=""> </label> <input type="file" id='image${ssff}' class="disno" accept="image/*" capture='camera' onchange="choose(this)"></div>
+                        </div>
+                                    <div class="cell-item">
+                                        <div class="cell-right">
+                                            <textarea class="cell-textarea dfdsfe1" value="${jiog.data[i].aurl} "></textarea>
+                                        </div>
+                            </div>
+                            <button type="submit" class="btn-block btn-warning" onclick = xiua(this)>修改</button>
+                            <p>${jiog.data[i].id}</p>
+                                `)
+                      
+                        $('.jdfoijwoig').append(jjiis)
+                            
+                            
+                        }
+                      
+                    }
+               
+                }
+            });
+        }
+
+
+        $('.dfsnj').on("touchend",function () {
+            var img1url = document.getElementById('image1').files[0];
+            var tzurl1 = document.getElementsByClassName('dfdsfe1')[0].value;
+            var img2url = document.getElementById('image2').files[0];
+            var tzurl2 = document.getElementsByClassName('dfdsfe2')[0].value;
+            var img3url = document.getElementById('image3').files[0];
+            var tzurl3 = document.getElementsByClassName('dfdsfe3')[0].value;
+            
+            
+          
+            var formdata = new FormData()
+            formdata.append('type',1)
+            formdata.append('name1',$('.fdsfhhe1').val())
+            formdata.append('img1url',img1url)
+            formdata.append('tzurl1',tzurl1)
+            formdata.append('name2',$('.fdsfhhe2').val())
+            formdata.append('img2url',img2url)
+            formdata.append('tzurl2',tzurl2)
+            formdata.append('name3',$('.fdsfhhe3').val())
+            formdata.append('img3url',img3url)
+            formdata.append('tzurl3',tzurl3)
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/lunbo.php",
+                data: formdata,
+                processData:false,
+                contentType:false,
+                success: function (response) {
+                   YDUI.dialog.toast('发布成功', 'none', 1000);
+                   back();
+                }
+            });
+        })
+    
+    function xiua(eq) {
+   var jisid = eq.nextElementSibling.innerText ;
+        $.ajax({
+            type: "post",
+            url: "http://localhost/phpbox/onlinepro/php/execute/lunbo.php",
+            data: "data",
+            dataType: "dataType",
+            success: function (response) {
+                
+            }
+        });
+    }
+    </script>
+</html>
+
+
+

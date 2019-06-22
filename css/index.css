@@ -1,0 +1,284 @@
+*{
+    font-family: '微软雅黑'
+}
+
+.margint{
+    margin-top: 50px;
+
+}
+.marginb{
+    margin-bottom: 60px;
+}
+/* .page2,.page3, .page4{
+    display: none;
+} */
+.headerlogin{
+    background: #FF6633
+    ;width: 100%;
+    height: 20%;
+    position: relative;
+}
+/* .navbar-fixed{
+    display: none;
+} */
+.colorsss{
+    background: transparent;
+    color:white !important;
+
+    
+}
+.colorsss:after{
+    border: none;
+}
+.loginbtn{
+    width: 42%;
+    text-align: center;
+    color: white;
+    border: 2px solid  white;
+    border-radius: 20px;
+    font-size: .4rem;
+    padding: 2px 5px;
+    margin: 10px auto;
+    line-height: 30px;
+}
+.wdbgk{
+    background: rgb(246, 246, 246);
+
+}
+.marginno{
+    margin: 0px;
+}
+.headimgk{
+    width: 70px;
+    height: 70px;
+    border: 2px solid white;    
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 40px;
+}
+.headimgk img{
+    width: 100%;
+}
+.shezk{
+    position: absolute;
+    left: 95px;
+    top: 45px;
+    color: white;
+}
+.user-niekname{
+    font-size: .38rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.user-seting{
+    font-size: .29rem;
+}
+.user-grad{
+    height: 25px;
+    padding: 0px 5px;
+    background:rgba(124, 124, 124, 0.308);
+    color: white;
+    position: absolute;
+    top: 55px;
+    right: 40px;
+    border-radius: 20px;
+
+}
+.usergrad-text{
+    line-height: 25px;
+    color: white ;
+    padding: 3px 5px;
+
+}
+.fdfd{
+    color: rgb(255, 205, 41)
+}
+.marginb10{
+    margin-bottom: 10px;
+}
+.bordernone:after{
+    border: none !important;
+}
+.ffdfw{
+    font-size: .5rem
+}
+.margin3{
+    margin: 0px 3px;
+}
+/* .w50{
+    width: 40%;
+} */
+.mtk a i{
+    color: #FF6633;
+    font-size: .4rem;
+
+}
+.mtk{
+    margin-bottom: 60px;
+}
+.shl a i{
+    font-size: .4rem;
+}
+.m-grids-5 .grids-item:not(:nth-child(5n)):before{
+    border: none;
+} 
+.dfse{
+    font-size: .43rem;
+}
+.dsfsdfwe{
+    font-size: .5rem;
+    color: rgb(29, 28, 28);
+}
+footer i {
+    font-size: .45rem !important;
+}
+.dfsfejjk i{
+    font-size: .4rem !important;
+}
+.dfsfejjk{
+    height: 50px !important;
+}
+
+.dfdsfwerrt i {
+    color: #FF6633 !important;
+    font-size: .5rem
+}
+.dftht{
+    margin-top: .15rem;
+}
+.dfdsfwerrt .grids-item:after {
+    border: none;
+}
+.dfdsfwerrt .grids-item:not(:nth-child(4n)):before {
+    border: none;
+}
+.dfdsfwerrt .grids-item{
+    padding: .25rem;
+}
+.dsfsdfwesa{
+    width: 100%;
+    height: 100%;
+}
+.headernab{
+   height: 1rem !important;
+}
+.dsfsdfwesa{
+    margin-left:15% !important;
+}
+.ijioiojir{
+    width: 100%;
+    height: 1rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 88888;
+    background: white;
+}
+.jodjogpp{
+    padding-left: 3%
+}
+.jodjogpp a{
+    display: inline-block !important;
+}
+.floatl{
+    float: left;
+    vertical-align: middle;
+    margin:  2% 3%
+}
+.floatr{
+    float: right;
+    vertical-align: middle;
+    margin:2% 3%
+}
+.jojirg{
+    width: 70%;
+    height: 50%;
+    margin-top: 13px;
+    background: rgb(231, 231, 231);
+    border-radius: 15px;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    color: #b8b8b8;
+    line-height: 25px;
+}
+.slider-item img{
+    width: 100% !important;
+}
+body{
+    font-family: '微软雅黑' !important;
+}
+.joiiasa{
+    width: 100%;
+    display: inline-block;
+    height: auto;
+  
+    font-size: .35rem;
+}
+.imgkkk{
+    width: 100%;
+}
+.imgkkk img{
+    width: 100%;
+}
+.jiwoeosa{
+    color: red;
+    padding: 0px;
+    padding-left: .25rem;
+    margin: 2px;
+}
+.efwef{
+    float: right;
+    color: black;
+    margin-right: .25rem;
+    }
+
+
+
+
+    .kfofjjw{
+        width: 50%;
+        display: inline-block;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 8px;
+    }
+    .jfijiw{
+        text-align: center;
+    }
+    .fdsdf{
+        margin: 15px 2px 5px 2px;
+        padding: 0px 5px;
+        white-space:nowrap; 
+        overflow:hidden;
+         text-overflow:ellipsis;
+         font-size: .32rem;
+    }
+    .fdsdfsa{
+        text-align: left;
+        margin: 4px;
+        padding: 0px 5px;
+        white-space:nowrap; 
+        overflow:hidden;
+         text-overflow:ellipsis;
+    }
+    .xianjia{
+        font-size: .3rem;
+        color: rgb(238, 37, 37);
+    }
+    .iwnurj{
+        font-size: .4rem;
+        color: rgb(238, 37, 37);
+    }
+    .yuanja{
+        color: rgb(187, 187, 187);
+        font-size: .25rem;
+        text-decoration:line-through
+    }
+    .list{
+        width: 100%
+    }
+    #J_ListContent{
+        margin:0px 0px 50px;
+    }

@@ -1,0 +1,91 @@
+<!-- 引入文件 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+   
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../frame/ydui-0.1.3/build/css/ydui.css" />
+    <link rel="stylesheet" href="../css/dfssffff.css">
+   <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../frame/ydui-0.1.3/build/js/ydui.flexible.js"></script>
+</head>
+<body>
+
+        <header class="m-navbar">
+                <a href="#" class="navbar-item" onclick=back()>
+                    <i class="back-ico"></i>
+                </a>
+                <div class="navbar-center">
+                    <span class="navbar-title">发货管理</span>
+                </div>
+                
+            </header>
+
+
+            
+<div class="m-cell">
+        <div class="cell-item">
+                <div class="cell-left">方式一:</div>
+                <div class="cell-right ">在下方输入快递单号</div>
+            </div>
+    <div class="cell-item">
+        <div class="cell-right">
+            <textarea class="cell-textarea" >
+
+
+            </textarea>
+        </div>
+    </div>
+    <button type="button" class="btn-block btn-primary dsfdsfs" onclick= fahuoba()>一件发货</button>
+</div>
+
+<script src="../js/gong.js"></script>
+    <!-- 引入jQuery 2.0+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../frame/ydui-0.1.3/build/js/ydui.js"></script>
+<!-- Bootstrap 4 requires Popper.js -->
+<script src="https://unpkg.com/popper.js@1.14.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+</body>
+    <script>
+
+        var jjioss = window.location.search;
+        var jiiaaf =jjioss.split("=")[1];
+        console.log(jiiaaf);
+        
+        function fahuoba() {
+          
+            $.ajax({
+                type: "post",
+                url: "http://localhost/phpbox/onlinepro/php/execute/dindan.php",
+                data: {type:789,ddid:jiiaaf,kuaidi:$('.cell-textarea').val()},
+                success: function (response) {
+                    console.log(response);
+
+
+
+                    YDUI.dialog.toast('发货成功', 'none', 1000);
+                setTimeout(() => {
+                    back();
+                }, 1000);
+                }
+            });
+
+
+              
+               
+        }
+        
+
+    </script>
+</html>
+
+
+
